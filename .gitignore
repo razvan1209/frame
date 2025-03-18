@@ -1,0 +1,20 @@
+# Node.js dependencies
+node_modules/
+
+# Cypress specific
+cypress/downloads/
+cypress/screenshots/
+cypress/reports/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Environment files
+.env
