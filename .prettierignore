@@ -1,0 +1,16 @@
+cypress/downloads
+cypress/screenshots
+cypress/reports
+cypress/support/commands.js
+cypress/support/e2e.js
+node_modules
+.eslintrc.js
+package-lock.json
+package.json
+cypress.config.js
+*.log
+.DS_Store
+.vscode
+.idea
+.env
+.prettierrc.json

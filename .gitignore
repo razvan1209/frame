@@ -18,3 +18,4 @@ cypress/reports/
 
 # Environment files
 .env
+.prettierrc.json
