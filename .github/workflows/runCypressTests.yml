@@ -30,8 +30,8 @@ jobs:
 
       - name: Generate Mochawesome Report
         run: |
-          npx mochawesome-merge "cypress/results/*.json" > mochawesome.json
-          npx marge mochawesome.json --reportDir cypress/results
+          npx mochawesome-merge cypress/reports/mochawesome/*.json -o cypress/reports/mochawesome.json
+          npx marge cypress/reports/mochawesome.json --reportDir cypress/reports --inline
 
       - name: Upload Test Artifacts (Reports)
         uses: actions/upload-artifact@v4
