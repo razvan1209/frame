@@ -1,1 +1,40 @@
+name: Run Cypress Tests
 
+on:
+  push:
+    branches:
+      - master # Change this if you want to run on a different branch
+  pull_request:
+    branches:
+      - master # Run tests on PRs
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest # You can also use windows-latest or macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0 # Use a version compatible with your tests
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress Tests
+        run: npx cypress run --spec "cypress/e2e/**/*.spec.js" # Modify path if needed
+
+      - name: Generate Mochawesome Report
+        run: |
+          npx mochawesome-merge "cypress/results/*.json" > mochawesome.json
+          npx marge mochawesome.json --reportDir cypress/results
+
+      - name: Upload Test Artifacts (Reports)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-test-report
+          path: cypress/results
