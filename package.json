@@ -5,7 +5,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --reporter mochawesome",
-    "merge-reports": "npx mochawesome-merge 'cypress/reports/mochawesome/*.json' -o cypress/reports/mochawesome.json",
+    "merge-reports": "npx mochawesome-merge cypress/reports/mochawesome/*.json -o cypress/reports/mochawesome.json",
     "generate-report": "npx marge cypress/reports/mochawesome.json --reportDir cypress/reports --inline",
     "test": "npm-run-all cypress:run merge-reports generate-report",
     "clean-reports": "rm -rf 'cypress/reports"
