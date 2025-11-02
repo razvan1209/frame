@@ -1,9 +1,9 @@
 class RegisterPage {
   elements = {
-    usernameInput: () => cy.get("#username"),
-    passwordInput: () => cy.get("#password"),
+    usernameInput: () => cy.get('#username'),
+    passwordInput: () => cy.get('#password'),
     loginButton: () => cy.get('button[id="submit"]'),
-    errorMessage: () => cy.get("#error"),
+    errorMessage: () => cy.get('#error'),
   };
 
   typeUsername(username) {
