@@ -18,4 +18,8 @@ describe('Practice Check Buttons Page Tests', () => {
       .intermediateCheckbox()
       .should('not.be.checked');
   });
+
+  it('should uncheck expert checkbox', () => {
+    cy.log('Unchecking Expert checkbox');
+  });
 });
