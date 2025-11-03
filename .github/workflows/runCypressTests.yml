@@ -1,12 +1,9 @@
 name: Run Cypress Tests
 
 on:
-  push:
-    branches:
-      - master # Change this if you want to run on a different branch
   pull_request:
     branches:
-      - master # Run tests on PRs
+      - master # Run tests on PRs targeting the master branch
   workflow_dispatch: # Allow manual trigger
 
 jobs:
