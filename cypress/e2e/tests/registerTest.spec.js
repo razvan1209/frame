@@ -25,4 +25,7 @@ describe('Register Page Tests', () => {
       .should('be.visible')
       .and('contain', 'invalid');
   });
+  it('should show error message when username is missing', () => {
+    cy.log('Test for missing username not implemented yet');
+  });
 });
